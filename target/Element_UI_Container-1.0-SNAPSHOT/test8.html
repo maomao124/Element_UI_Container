@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<!--
+Project name(项目名称)：Element_UI_Container
+  File name(文件名): test8
+  Authors(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/4/27
+  Time(创建时间)： 11:12
+  Description(描述)： 无
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/element-ui.css">
+    <script src="js/vue.js"></script>
+    <script src="js/element-ui.js"></script>
+    <style>
+        .el-header, .el-footer {
+            background-color: #B3C0D1;
+            color: #333;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .el-aside {
+            background-color: #D3DCE6;
+            color: #333;
+            text-align: center;
+            line-height: 200px;
+        }
+
+        .el-main {
+            background-color: #E9EEF3;
+            color: #333;
+            text-align: center;
+            line-height: 160px;
+        }
+
+        body > .el-container {
+            margin-bottom: 40px;
+        }
+
+        .el-container:nth-child(5) .el-aside,
+        .el-container:nth-child(6) .el-aside {
+            line-height: 260px;
+        }
+
+        .el-container:nth-child(7) .el-aside {
+            line-height: 320px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <el-container>
+        <el-header height="100px">header</el-header>
+        <el-container>
+            <el-container direction="horizontal">
+                <el-aside width="15%">aside</el-aside>
+                <el-container>
+                    <el-main v-html="data">main</el-main>
+                </el-container>
+            </el-container>
+            <el-footer height="200px">footer</el-footer>
+        </el-container>
+    </el-container>
+
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            data: "文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>" +
+                "文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>文字测试...<br>"
+        },
+        methods: {},
+    })
+</script>
+</body>
+</html>
